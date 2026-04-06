@@ -5,7 +5,7 @@ const session = require('express-session')
 const passport = require('passport')
 const { PrismaSessionStore } = require('@quixo3/prisma-session-store')
 
-import { prisma } from '../lib/prisma'
+const { prisma } = require('./lib/prisma.js')
 require('dotenv').config()
 
 
@@ -33,7 +33,7 @@ app.use(
         store: sessionStore
     })
 )
-app.use(Passport.session())
+app.use(passport.session())
 app.use((req, res, next) => {
     res.locals.user = req.user
     next()

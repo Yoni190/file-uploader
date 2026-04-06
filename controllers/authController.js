@@ -1,4 +1,4 @@
-import { prisma } from '../lib/prisma'
+const { prisma } = require('../lib/prisma')
 const bcrypt = require('bcrypt')
 const { body, validationResult, matchedData } = require('express-validator')
 const passport = require('passport')
