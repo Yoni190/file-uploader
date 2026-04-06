@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('node:path')
 const authRoute = require('./routes/authRoute')
+const userRoute = require('./routes/userRoute')
 const session = require('express-session')
 const passport = require('passport')
 const { PrismaSessionStore } = require('@quixo3/prisma-session-store')
@@ -44,6 +45,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 app.use(authRoute)
+app.use(userRoute)
 
 const PORT = process.env.PORT
 app.listen(PORT, (error) => {
