@@ -1,3 +1,5 @@
-const registerView = (req, res) => {
-    res.render('sign-up')
-}
+exports.registerView = [
+    (req, res) => {
+        res.render('sign-up')
+    }
+]
