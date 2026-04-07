@@ -57,7 +57,8 @@ exports.login = [
         const errors = validationResult(req)
         if(!errors.isEmpty()) {
             return res.status(400).render('login', {
-                errors: errors.array()
+                errors: errors.array(),
+                title: 'Log In'
             })
         }
 
