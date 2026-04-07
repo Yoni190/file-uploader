@@ -31,6 +31,7 @@ exports.register = [
         if(!errors.isEmpty()) {
             return res.status(400).render('sign-up', {
                 errors: errors.array(),
+                title: 'Sign Up'
             })
         }
 
