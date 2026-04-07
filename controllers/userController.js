@@ -10,3 +10,9 @@ exports.loginView = [
         res.render('login')
     }
 ]
+
+exports.home = [
+    (req, res) => {
+        res.render('home')
+    }
+]
