@@ -1,18 +1,24 @@
 exports.registerView = [
     (req, res) => {
-        res.render('sign-up')
+        res.render('sign-up', {
+            title: 'Sign Up'
+        })
     }
 ]
 
 
 exports.loginView = [
     (req, res) => {
-        res.render('login')
+        res.render('login', {
+            title: 'Login'
+        })
     }
 ]
 
 exports.home = [
     (req, res) => {
-        res.render('home')
+        res.render('home', {
+            title: 'Home'
+        })
     }
 ]
