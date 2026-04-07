@@ -1,4 +1,5 @@
 const express = require('express')
+const expressLayout = require('express-ejs-layouts')
 const path = require('node:path')
 const authRoute = require('./routes/authRoute')
 const userRoute = require('./routes/userRoute')
@@ -45,6 +46,8 @@ app.use((req, res, next) => {
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
+app.use(expressLayout)
+
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
