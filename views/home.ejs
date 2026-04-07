@@ -1,7 +1,12 @@
 <div>
     <h1>Home</h1>
     <div>
-        <input type="file" name="file" id="file" accept="application/pdf">
-        <button>Upload</button>
+        <% if(user) { %>
+            <input type="file" name="file" id="file" accept="application/pdf">
+            <button>Upload</button>
+        <% } else { %>
+            <h2>Sign up to upload your files</h2>
+        <% } %>
+        
     </div>
 </div>
