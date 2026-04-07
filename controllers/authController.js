@@ -43,7 +43,7 @@ exports.register = [
                 f_name: f_name,
                 l_name: l_name,
                 username: username,
-                password: password
+                password: hashedPassword
             }
         })
 
