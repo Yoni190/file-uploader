@@ -3,6 +3,7 @@ const expressLayout = require('express-ejs-layouts')
 const path = require('node:path')
 const authRoute = require('./routes/authRoute')
 const userRoute = require('./routes/userRoute')
+const folderRoute = require('./routes/folderRoute')
 const session = require('express-session')
 const passport = require('passport')
 const { PrismaSessionStore } = require('@quixo3/prisma-session-store')
@@ -53,6 +54,7 @@ app.use(express.static(assetsPath));
 
 app.use(authRoute)
 app.use(userRoute)
+app.use(folderRoute)
 
 const PORT = process.env.PORT
 app.listen(PORT, (error) => {
