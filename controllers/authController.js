@@ -78,7 +78,7 @@ exports.logout = [
                 return next(err)
             }
 
-            res.redirect('/login')
+            res.redirect('/')
         })
     }
 ]
