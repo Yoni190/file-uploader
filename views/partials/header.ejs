@@ -3,8 +3,12 @@
 
     <nav>
         <ul class="nav-links">
-            <li><a href="/login">Log In</a></li>
-            <li><a href="/register">Sign Up</a></li>
+            <% if(!user) { %>
+                <li><a href="/login">Log In</a></li>
+                <li><a href="/register">Sign Up</a></li>
+            <% } else { %>
+                <li><a href="/logout">Log Out</a></li>
+            <% } %>
         </ul>
     </nav>
 </header>
