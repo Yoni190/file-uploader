@@ -8,6 +8,21 @@ exports.createView = [
     }
 ]
 
+exports.editView = [
+    async (req, res) => {
+        const folderId = parseInt(req.params.id)
+
+        const folder = await prisma.folder.findUnique({
+            where: { id: folderId, userId: req.user.id }
+        })
+
+        res.render('edit-folder', {
+            title: 'Edit Folder',
+            folder: folder
+        })
+    }
+]
+
 exports.create = [
     async (req, res) => {
         const { folder_name } = req.body
