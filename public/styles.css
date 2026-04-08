@@ -9,7 +9,7 @@
     color: red;
 }
 
-header, .nav-links, .folders-header {
+header, .nav-links, .folders-header, .details-header, .folder-actions {
     display: flex;
 }
 
@@ -64,4 +64,16 @@ a {
 
 .folders-container {
     padding: 20px;
+}
+
+.folder-details {
+    padding: 10px;
+}
+
+.details-header {
+    justify-content: space-between;
+}
+
+.folder-actions {
+    gap: 5px;
 }
