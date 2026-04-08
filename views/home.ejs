@@ -10,13 +10,17 @@
 
         
         <% if(user) { %>
-            <h2>Folders</h2>
-            <a href="/create-folder" class="create-folder">Create a folder</a>
-            <ul>
-                <% folders.forEach((folder) => { %>
-                    <li><%= folder.name %></li>
-                <% }) %>
-            </ul>
+            <div class="folders-container">
+                <div class="folders-header">
+                    <h2>Folders</h2>
+                    <a href="/create-folder" class="create-folder">Create a folder</a>
+                </div>
+                <ul class="folders">
+                    <% folders.forEach((folder) => { %>
+                        <li><%= folder.name %></li>
+                    <% }) %>
+                </ul>
+            </div>
         <% } %>
     </div>
 </div>
