@@ -5,7 +5,8 @@
         <h2><%= folder.name %></h2>
         <div class="folder-actions">
             <a href="/edit-folder/<%= folder.id %>">Edit Folder</a>
-            <form action="">
+
+            <form action="/delete-folder/<%= folder.id %>" method="POST">
                 <button>Delete folder</button>
             </form>
         </div>
