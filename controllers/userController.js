@@ -1,3 +1,5 @@
+const { prisma } = require('../lib/prisma')
+
 exports.registerView = [
     (req, res) => {
         res.render('sign-up', {
@@ -16,9 +18,14 @@ exports.loginView = [
 ]
 
 exports.home = [
-    (req, res) => {
+    async (req, res) => {
+        const folders = await prisma.folder.findMany({
+            where: { userId: req.user?.id }
+        })
+
         res.render('home', {
-            title: 'Home'
+            title: 'Home',
+            folders: folders
         })
     }
 ]

@@ -30,8 +30,17 @@ a {
     color: black;
 }
 
-.nav-links a {
+.nav-links a, .create-folder  {
     border: 1px solid black;
+}
+
+.nav-links a {
     padding: 7px;
     border-radius: 7px;
+}
+
+.create-folder {
+    padding: 3px;
+    border-radius: 4px;
+    background-color: bisque;
 }

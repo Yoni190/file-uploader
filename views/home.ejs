@@ -4,10 +4,19 @@
         <% if(user) { %>
             <input type="file" name="file" id="file" accept="application/pdf">
             <button>Upload</button>
-            <a href="/create-folder">Create a folder</a>
         <% } else { %>
             <h2>Sign up to upload your files</h2>
         <% } %>
+
         
+        <% if(user) { %>
+            <h2>Folders</h2>
+            <a href="/create-folder" class="create-folder">Create a folder</a>
+            <ul>
+                <% folders.forEach((folder) => { %>
+                    <li><%= folder.name %></li>
+                <% }) %>
+            </ul>
+        <% } %>
     </div>
 </div>
