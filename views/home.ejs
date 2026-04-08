@@ -2,8 +2,10 @@
     <h1>Home</h1>
     <div>
         <% if(user) { %>
-            <input type="file" name="file" id="file" accept="application/pdf">
-            <button>Upload</button>
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="file" accept="application/pdf">
+                <button>Upload</button>
+            </form>
         <% } else { %>
             <h2>Sign up to upload your files</h2>
         <% } %>
