@@ -58,6 +58,10 @@ a {
     padding-top: 10px;
 }
 
+.folders a {
+    text-decoration: underline;
+}
+
 .folders-container {
     padding: 20px;
 }
