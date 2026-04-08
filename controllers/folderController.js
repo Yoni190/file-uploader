@@ -25,9 +25,16 @@ exports.create = [
 ]
 
 exports.folderDetails = [
-    (req, res) => {
+    async (req, res) => {
+        const folderId = parseInt(req.params.id)
+        
+        const folder = await prisma.folder.findUnique({
+            where: { id: folderId, userId: req.user.id },
+        })
+
         res.render('folder-details', {
-            title: 'Folder Details'
+            title: 'Folder Details',
+            folder: folder
         })
     }
 ]
