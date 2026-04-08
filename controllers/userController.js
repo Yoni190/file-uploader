@@ -20,7 +20,8 @@ exports.loginView = [
 exports.home = [
     async (req, res) => {
         const folders = await prisma.folder.findMany({
-            where: { userId: req.user?.id }
+            where: { userId: req.user?.id },
+            orderBy: { createdAt: 'desc' }
         })
 
         res.render('home', {
