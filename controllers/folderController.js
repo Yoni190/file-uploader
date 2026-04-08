@@ -39,6 +39,20 @@ exports.create = [
     }
 ]
 
+exports.edit = [
+    async (req, res) => {
+        const { folder_name } = req.body
+        const folderId = parseInt(req.params.id)
+
+        await prisma.folder.update({
+            where: { id: folderId, userId: req.user.id },
+            data: { name: folder_name }
+        })
+
+        res.redirect('/')
+    }
+]
+
 exports.folderDetails = [
     async (req, res) => {
         const folderId = parseInt(req.params.id)
