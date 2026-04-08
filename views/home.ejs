@@ -1,16 +1,5 @@
 <div>
-    <h1>Home</h1>
     <div>
-        <% if(user) { %>
-            <form action="/upload" method="post" enctype="multipart/form-data">
-                <input type="file" name="file" id="file" accept="application/pdf">
-                <button>Upload</button>
-            </form>
-        <% } else { %>
-            <h2>Sign up to upload your files</h2>
-        <% } %>
-
-        
         <% if(user) { %>
             <div class="folders-container">
                 <div class="folders-header">
@@ -23,6 +12,8 @@
                     <% }) %>
                 </ul>
             </div>
+        <% } else { %>
+            <h2>Sign Up to upload files</h2>
         <% } %>
     </div>
 </div>

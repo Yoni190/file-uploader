@@ -1,4 +1,9 @@
 <div>
     <h1>Folder Details</h1>
     <h2><%= folder.name %></h2>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file" accept="application/pdf">
+        <button>Upload</button>
+    </form>
 </div>
