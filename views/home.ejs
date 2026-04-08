@@ -19,7 +19,7 @@
                 </div>
                 <ul class="folders">
                     <% folders.forEach((folder) => { %>
-                        <li><%= folder.name %></li>
+                        <li><a href="folder/<%= folder.id %>/"><%= folder.name %></a></li>
                     <% }) %>
                 </ul>
             </div>
