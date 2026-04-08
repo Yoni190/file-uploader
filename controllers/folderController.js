@@ -23,3 +23,11 @@ exports.create = [
         return res.redirect('/')
     }
 ]
+
+exports.folderDetails = [
+    (req, res) => {
+        res.render('folder-details', {
+            title: 'Folder Details'
+        })
+    }
+]
