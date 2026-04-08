@@ -2,7 +2,10 @@ const { Router } = require('express')
 const router = Router()
 const fileController = require('../controllers/fileController')
 const { isAuth } = require('../middleware/isAuth')
+const multer = require('multer')
+const upload = multer({ dest: 'uploads/' })
 
-router.post('/upload', fileController.upload)
+
+router.post('/upload', upload.single('file'), fileController.upload)
 
 module.exports = router
