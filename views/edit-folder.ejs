@@ -1,5 +1,5 @@
 <div>
-    <form action="/edit-folder" method="POST">
+    <form action="/edit-folder/<%= folder.id %>" method="POST">
         <label for="folder_name">Folder Name</label>
         <input type="text" name="folder_name" id="folder_name" value="<%= folder.name %>">
         <button type="submit">Edit folder</button>
