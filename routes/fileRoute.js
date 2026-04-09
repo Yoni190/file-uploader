@@ -7,5 +7,6 @@ const upload = multer({ dest: 'uploads/' })
 
 
 router.post('/upload/:id', upload.single('file'), fileController.upload)
+router.post('/delete-file/:id', fileController.deleteFile)
 
 module.exports = router
