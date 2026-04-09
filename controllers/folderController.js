@@ -1,4 +1,5 @@
 const { prisma } = require('../lib/prisma')
+const { supabase } = require('../config/supabase')
 
 exports.createView = [
     (req, res) => {
@@ -56,13 +57,28 @@ exports.edit = [
 exports.deleteFolder = [
     async (req, res) => {
         const folderId = parseInt(req.params.id)
+        const files = await prisma.file.findMany({
+            where: { folderId: folderId },
+            select: { url: true }
+        })
+
         await prisma.file.deleteMany({
             where: { folderId: folderId }
         })
 
-        await prisma.folder.delete({
+        await prisma.folder.deleteMany({
             where: { id: folderId, userId: req.user.id }
         })
+
+        const fileUrls = files.flatMap(file => Object.values(file))
+
+        const { data, error } = await supabase.storage
+                                              .from('files')
+                                              .remove(fileUrls)
+
+        if(error) {
+            console.log(error)
+        }
 
         res.redirect('/')
     }
