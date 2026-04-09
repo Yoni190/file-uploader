@@ -72,9 +72,14 @@ exports.folderDetails = [
             where: { id: folderId, userId: req.user.id },
         })
 
+        const files = await prisma.file.findMany({
+            where: { folderId: folderId }
+        })
+
         res.render('folder-details', {
             title: 'Folder Details',
-            folder: folder
+            folder: folder,
+            files: files
         })
     }
 ]

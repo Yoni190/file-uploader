@@ -16,4 +16,12 @@
         <input type="file" name="file" id="file" accept="application/pdf" required>
         <button>Upload</button>
     </form>
+
+    <div>
+        <ul>
+            <% files.forEach((file) => { %>
+                <li><%= file.name %> <%= file.size %> MB</li>
+            <% }) %>
+        </ul>
+    </div>
 </div>
