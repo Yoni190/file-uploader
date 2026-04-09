@@ -18,3 +18,14 @@ exports.upload = [
         res.redirect(`/folder/${folderId}`)
     }
 ]
+
+exports.deleteFile = [
+    async (req, res) => {
+        const fileId = parseInt(req.params.id)
+        const file = await prisma.file.delete({
+            where: { id: fileId }
+        })
+
+        res.redirect(`/folder/${file.folderId}`)
+    }
+]
