@@ -47,6 +47,14 @@ exports.deleteFile = [
             where: { id: fileId }
         })
 
+        const { data, error } = await supabase.storage
+                                              .from('files')
+                                              .remove([file.url])
+
+        if(error) {
+            console.log(error)
+        }
+
         res.redirect(`/folder/${file.folderId}`)
     }
 ]
