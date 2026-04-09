@@ -30,6 +30,7 @@ exports.upload = [
             data: {
                 name: fileName,
                 size: size,
+                url: data.fullPath,
                 folder: {
                     connect: { id: folderId }
                 }
