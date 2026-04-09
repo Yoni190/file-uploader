@@ -56,6 +56,10 @@ exports.edit = [
 exports.deleteFolder = [
     async (req, res) => {
         const folderId = parseInt(req.params.id)
+        await prisma.file.deleteMany({
+            where: { folderId: folderId }
+        })
+
         await prisma.folder.delete({
             where: { id: folderId, userId: req.user.id }
         })
