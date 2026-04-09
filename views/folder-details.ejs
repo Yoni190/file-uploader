@@ -20,7 +20,7 @@
     <div>
         <ul>
             <% files.forEach((file) => { %>
-                <li><%= file.name %> <%= file.size %> MB</li>
+                <li><%= file.name %> <%= file.size %> MB <%= file.createdAt %></li>
                 <form action="/delete-file/<%= file.id %>" method="POST">
                     <button type="submit">Delete File</button>
                 </form>
