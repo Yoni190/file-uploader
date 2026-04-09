@@ -6,6 +6,6 @@ const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 
 
-router.post('/upload', upload.single('file'), fileController.upload)
+router.post('/upload/:id', upload.single('file'), fileController.upload)
 
 module.exports = router
